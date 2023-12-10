@@ -14,4 +14,8 @@ public class myButton extends Button {
     public void switchOn(){
         this.on = !this.on;
     }
+
+    public void setOnValue(Boolean aux){
+        this.on = aux;
+    }
 }

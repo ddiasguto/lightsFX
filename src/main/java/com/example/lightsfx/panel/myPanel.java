@@ -1,13 +1,6 @@
 package com.example.lightsfx.panel;
-
 import com.example.lightsfx.button.myButton;
-
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -15,8 +8,9 @@ import javafx.geometry.Pos;
 
 public class myPanel {
 
+    String black = "-fx-background-color: Black";
+    String green = "-fx-background-color: Green";
 
-    
     public HBox addHBox() {
 
         myButton btn1 = new myButton();
@@ -30,77 +24,26 @@ public class myPanel {
         hbox.setPadding(new Insets(15, 12, 15, 12));
         hbox.setSpacing(10);
 
+        myButton[] buttons = {btn1,btn2,btn3,btn4,btn5};
 
-        btn1.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent event) {
-                if(btn2.on){
-                    btn2.setStyle("-fx-background-color: Black");
+            for( int i=0;i<buttons.length;i++){
+                final int j = i;
+                buttons[i].setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    if(buttons[j].on){
+                        buttons[j].setStyle(black);
+                    }
+                    else{
+                        buttons[j].setStyle(green);
+                    }
+                buttons[j].switchOn();
                 }
-                else{
-                    btn2.setStyle("-fx-background-color: Green");
-                }
-                if(btn3.on){
-                    btn3.setStyle("-fx-background-color: Black");
-                }
-                else{
-                    btn3.setStyle("-fx-background-color: Green");
-                }
-                btn2.switchOn(); 
-                btn3.switchOn();
-            }
-        });
-
-
-
-        btn2.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-
-            public void handle(ActionEvent event) {
-                if(btn1.on){
-                    btn1.setStyle("-fx-background-color: Black");
-                }
-                else{
-                    btn1.setStyle("-fx-background-color: Green");
-                }
-                if(btn3.on){
-                    btn3.setStyle("-fx-background-color: Black");
-                }
-                else{
-                    btn3.setStyle("-fx-background-color: Green");
-                }
-                btn1.switchOn();
-                btn3.switchOn();
+            });
             }
 
-        });
-
-
-
-        btn3.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if(btn2.on){
-                    btn2.setStyle("-fx-background-color: Black");
-                }
-                else{
-                    btn2.setStyle("-fx-background-color: Green");
-                }
-                if(btn1.on){
-                    btn1.setStyle("-fx-background-color: Black");
-                }
-                else{
-                    btn1.setStyle("-fx-background-color: Green");
-                }
-                btn2.switchOn();
-                btn1.switchOn();
-            }
-        });
-
-        hbox.getChildren().addAll(btn1,btn2,btn3);
-        hbox.setAlignment(Pos.CENTER);
-
+            hbox.getChildren().addAll(buttons);
+            hbox.setAlignment(Pos.CENTER);
 
         return hbox;
     }}

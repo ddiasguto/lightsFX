@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class HelloApplication extends Application {
+public class LightsFx extends Application {
     public static void main(String[] args) {
         launch(args);
     }
@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Ding Application!");
+        primaryStage.setTitle("LightsFx Application!");
         BorderPane root = new BorderPane();
 
        

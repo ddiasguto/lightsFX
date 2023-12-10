@@ -7,13 +7,11 @@ public class myButton extends Button {
     
     public myButton(){
         on = false;
+        this.setMinHeight(30);
+        this.setMinWidth(30);
     }
     
     public void switchOn(){
         this.on = !this.on;
-    }
-
-    public void setOnValue(Boolean value){
-        this.on = value;
     }
 }

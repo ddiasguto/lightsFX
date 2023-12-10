@@ -18,16 +18,15 @@ public class myPanel {
 
     
     public HBox addHBox() {
+
         myButton btn1 = new myButton();
         myButton btn2 = new myButton();
         myButton btn3 = new myButton();
-        btn1.setMinWidth(30);
-        btn1.setMinHeight(30);
-        btn2.setMinWidth(30);
-        btn2.setMinHeight(30);
-        btn3.setMinWidth(30);
-        btn3.setMinHeight(30);
+        myButton btn4 = new myButton();
+        myButton btn5 = new myButton();
+
         HBox hbox = new HBox();
+
         hbox.setPadding(new Insets(15, 12, 15, 12));
         hbox.setSpacing(10);
 

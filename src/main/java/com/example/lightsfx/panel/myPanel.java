@@ -33,13 +33,9 @@ public class myPanel {
                 buttons[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    if(buttons[j].on){
-                        buttons[j].setStyle(black);
-                    }
-                    else{
-                        buttons[j].setStyle(green);
-                    }
-                buttons[j].switchOn();
+                    String color = buttons[j].on ? black : green; 
+                    buttons[j].setStyle(color);
+                    buttons[j].switchOn();
                 }
             });
             }

@@ -36,11 +36,20 @@ public class myPanel {
                 final int l = i+1;
 
                 buttons[i].setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        buttonAction(buttons[j]);
-                        if(l<buttons.length) buttonAction(buttons[l]);
-                        if(k>=0) buttonAction(buttons[k]);
+                @Override
+                public void handle(ActionEvent event) {
+                    String color = buttons[j].on ? black : green; 
+                    buttons[j].setStyle(color);
+                    buttons[j].switchOn();
+                    if(l<buttons.length){
+                        color = buttons[l].on ? black : green; 
+                        buttons[l].setStyle(color);
+                        buttons[l].switchOn();
+                    }
+                    if(k>=0){
+                        color = buttons[k].on ? black : green; 
+                        buttons[k].setStyle(color);
+                        buttons[k].switchOn();
                     }
                 });
 
@@ -57,7 +66,15 @@ public class myPanel {
         button.setOnValue(random.nextBoolean());
         String color = button.on ? green : black;
         button.setStyle(color);
+        button.setStyle(color);
     }
+
+    private void buttonAction(myButton button){
+        String color = button.on ? black : green; 
+        button.setStyle(color);
+        button.switchOn();
+    }
+
 
     private void buttonAction(myButton button){
         String color = button.on ? black : green; 

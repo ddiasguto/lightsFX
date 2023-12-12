@@ -30,12 +30,24 @@ public class myPanel {
 
             for( int i=0;i<buttons.length;i++){
                 final int j = i;
+                final int k = i-1;
+                final int l = i+1;
                 buttons[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     String color = buttons[j].on ? black : green; 
                     buttons[j].setStyle(color);
                     buttons[j].switchOn();
+                    if(l<buttons.length){
+                        color = buttons[l].on ? black : green; 
+                        buttons[l].setStyle(color);
+                        buttons[l].switchOn();
+                    }
+                    if(k>=0){
+                        color = buttons[k].on ? black : green; 
+                        buttons[k].setStyle(color);
+                        buttons[k].switchOn();
+                    }
                 }
             });
             }

@@ -51,7 +51,7 @@ public class myPanel {
                         buttons[k].setStyle(color);
                         buttons[k].switchOn();
                     }
-                });
+                }});
 
             }
 
@@ -68,13 +68,6 @@ public class myPanel {
         button.setStyle(color);
         button.setStyle(color);
     }
-
-    private void buttonAction(myButton button){
-        String color = button.on ? black : green; 
-        button.setStyle(color);
-        button.switchOn();
-    }
-
 
     private void buttonAction(myButton button){
         String color = button.on ? black : green; 

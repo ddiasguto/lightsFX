@@ -38,18 +38,12 @@ public class myPanel {
                 buttons[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    String color = buttons[j].on ? black : green; 
-                    buttons[j].setStyle(color);
-                    buttons[j].switchOn();
+                    buttonAction(buttons[j]);
                     if(l<buttons.length){
-                        color = buttons[l].on ? black : green; 
-                        buttons[l].setStyle(color);
-                        buttons[l].switchOn();
+                        buttonAction(buttons[l]);
                     }
                     if(k>=0){
-                        color = buttons[k].on ? black : green; 
-                        buttons[k].setStyle(color);
-                        buttons[k].switchOn();
+                        buttonAction(buttons[k]);
                     }
                 }});
 
@@ -65,7 +59,6 @@ public class myPanel {
         Random random = new Random();
         button.setOnValue(random.nextBoolean());
         String color = button.on ? green : black;
-        button.setStyle(color);
         button.setStyle(color);
     }
 

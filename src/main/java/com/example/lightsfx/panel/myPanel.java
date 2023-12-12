@@ -19,6 +19,7 @@ public class myPanel {
     myButton btn4 = new myButton();
     myButton btn5 = new myButton();
     public myButton[] buttons = {btn1,btn2,btn3,btn4,btn5};
+    
     public HBox addHBox() {
 
 
@@ -29,27 +30,20 @@ public class myPanel {
 
 
             for( int i=0;i<buttons.length;i++){
+                
                 final int j = i;
                 final int k = i-1;
                 final int l = i+1;
+
                 buttons[i].setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    String color = buttons[j].on ? black : green; 
-                    buttons[j].setStyle(color);
-                    buttons[j].switchOn();
-                    if(l<buttons.length){
-                        color = buttons[l].on ? black : green; 
-                        buttons[l].setStyle(color);
-                        buttons[l].switchOn();
+                    @Override
+                    public void handle(ActionEvent event) {
+                        buttonAction(buttons[j]);
+                        if(l<buttons.length) buttonAction(buttons[l]);
+                        if(k>=0) buttonAction(buttons[k]);
                     }
-                    if(k>=0){
-                        color = buttons[k].on ? black : green; 
-                        buttons[k].setStyle(color);
-                        buttons[k].switchOn();
-                    }
-                }
-            });
+                });
+
             }
 
             hbox.getChildren().addAll(buttons);
@@ -59,10 +53,16 @@ public class myPanel {
     }
 
     public void setInitialValue(myButton button){
-         Random random = new Random();
+        Random random = new Random();
         button.setOnValue(random.nextBoolean());
         String color = button.on ? green : black;
-         button.setStyle(color);
+        button.setStyle(color);
+    }
+
+    private void buttonAction(myButton button){
+        String color = button.on ? black : green; 
+        button.setStyle(color);
+        button.switchOn();
     }
 }
 

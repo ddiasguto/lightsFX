@@ -47,8 +47,8 @@ String green = "-fx-background-color: Green";
             columnCount++;
         }
         setActions(buttons);
-       
-       
+        gridPane.setHgap(3); 
+        gridPane.setVgap(3); 
         root.setCenter(gridPane);
         root.setBottom(resetPanel(buttons));
 

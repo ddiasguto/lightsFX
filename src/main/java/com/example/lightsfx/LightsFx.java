@@ -28,40 +28,12 @@ String green = "-fx-background-color: Green";
         BorderPane root = new BorderPane();
         
         GridPane gridPane = new GridPane();
-        myButton btn00 = new myButton();
-        myButton btn01 = new myButton();
-        myButton btn02 = new myButton();
-        myButton btn03 = new myButton();
-        myButton btn04 = new myButton();
-        myButton btn10 = new myButton();
-        myButton btn11 = new myButton();
-        myButton btn12 = new myButton();
-        myButton btn13 = new myButton();
-        myButton btn14 = new myButton();
-        myButton btn20 = new myButton();
-        myButton btn21 = new myButton();
-        myButton btn22 = new myButton();
-        myButton btn23 = new myButton();
-        myButton btn24 = new myButton();
-        myButton btn30 = new myButton();
-        myButton btn31 = new myButton();
-        myButton btn32 = new myButton();
-        myButton btn33 = new myButton();
-        myButton btn34 = new myButton();
-        myButton btn40 = new myButton();
-        myButton btn41 = new myButton();
-        myButton btn42 = new myButton();
-        myButton btn43 = new myButton();
-        myButton btn44 = new myButton();
-
-
-
         final myButton[][] buttons = {
-            {btn00,btn01,btn02,btn03,btn04},
-            {btn10,btn11,btn12,btn13,btn14},
-            {btn20,btn21,btn22,btn23,btn24},
-            {btn30,btn31,btn32,btn33,btn34},
-            {btn40,btn41,btn42,btn43,btn44}
+            {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()},
+            {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()},
+            {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()},
+            {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()},
+            {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()}
         };
 
         

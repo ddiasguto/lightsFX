@@ -5,11 +5,8 @@ import com.example.lightsfx.button.myButton;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 
 public class MyPanel {
 
@@ -26,13 +23,9 @@ public class MyPanel {
    };
     public GridPane gridPane = new GridPane();
     public GridPane gridPane() {
-
-
-
         gridPane.setHgap(3); 
         gridPane.setVgap(3); 
         setActions(buttons);
-
         return gridPane;
     }
 
@@ -55,6 +48,7 @@ public class MyPanel {
                     }
                     i++;
                 }
+                System.out.println("New Challenge Settled!");
             }
         });
 
@@ -88,7 +82,7 @@ public class MyPanel {
          button.switchOn();
      }
 
-     public void setButtonInitialValue(myButton button){
+    public void setButtonInitialValue(myButton button){
         Random random = new Random();
        button.setOnValue(random.nextBoolean());
        String color = button.on ? green : black;

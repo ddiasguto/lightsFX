@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -27,11 +28,23 @@ public class LightsFx extends Application {
         MyPanel myPanel = new MyPanel();
         myPanel.placingButtons(myPanel.gridPane);
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(myPanel.gridPane(),myPanel.resetPanel());
+        HBox hBox = new HBox();
+        hBox.getChildren().addAll(
+            myPanel.resetPanel(),
+            myPanel.invertButtons());
+        
+        hBox.setSpacing(20);
+        hBox.setAlignment(Pos.CENTER);
+
+        vBox.getChildren().addAll(
+            myPanel.gridPane(),
+            hBox            
+        );
+
         vBox.setAlignment(Pos.CENTER);
         root.setCenter(vBox);
         
-        primaryStage.setScene(new Scene(root, 300, 250));
+        primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();
     }
 }

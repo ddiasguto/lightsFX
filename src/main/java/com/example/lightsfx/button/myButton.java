@@ -7,8 +7,8 @@ public class myButton extends Button {
     
     public myButton(){
         on = false;
-        this.setMinHeight(30);
-        this.setMinWidth(30);
+        this.setMinHeight(60);
+        this.setMinWidth(60);
     }
     
     public void switchOn(){

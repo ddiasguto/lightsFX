@@ -61,6 +61,29 @@ public class MyPanel {
         return resetBtn;
     } 
 
+     public Button invertButtons(){    
+        Button invertBtn = new Button();
+        
+        
+        invertBtn.setText("Invert All.");
+        invertBtn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                int i=0;
+                while(i<5){
+                    for(int j=0;j<5;j++){
+                        buttonAction(buttons[i][j]);
+                    }
+                    i++;
+                }
+                System.out.println("Buttons state changed!");
+            }
+        });
+
+        return invertBtn;
+    } 
+
     private void setActions(myButton[][] buttons){
         int i = 0;
          while(i < 5){

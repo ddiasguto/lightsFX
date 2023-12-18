@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 
 public class MyPanel {
 
@@ -22,16 +24,20 @@ public class MyPanel {
        {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()}
    };
     public GridPane gridPane = new GridPane();
+    
     public GridPane gridPane() {
         gridPane.setHgap(3); 
         gridPane.setVgap(3); 
         setActions(buttons);
+        gridPane.setPadding(new Insets(15, 12, 15, 12));
+        gridPane.setAlignment(Pos.CENTER);
         return gridPane;
     }
 
 
     public Button resetPanel(){    
         Button resetBtn = new Button();
+        
         
         resetBtn.setText("New Challenge");
         resetBtn.setOnAction(new EventHandler<ActionEvent>() {

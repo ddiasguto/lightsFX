@@ -1,8 +1,6 @@
 package com.example.lightsfx.panel;
 import java.util.Random;
-
 import com.example.lightsfx.button.myButton;
-
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.event.ActionEvent;
@@ -95,8 +93,7 @@ public class MyPanel {
                      @Override
                      public void handle(ActionEvent event) {
                          System.out.println("button clicked: " + rowIndex + ' ' + colIndex);
-                         buttonAction(buttons[colIndex][rowIndex
-                         ]);
+                         buttonAction(buttons[colIndex][rowIndex]);
                      }
                  });
              }

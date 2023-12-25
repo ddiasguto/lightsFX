@@ -7,6 +7,7 @@ public class myButton extends Button {
     
     public myButton(){
         on = false;
+        this.setStyle("-fx-background-color: Black");
         this.setMinHeight(60);
         this.setMinWidth(60);
     }

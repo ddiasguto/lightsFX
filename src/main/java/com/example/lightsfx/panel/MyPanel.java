@@ -40,20 +40,10 @@ public class MyPanel {
         
         resetBtn.setText("New Challenge");
         resetBtn.setOnAction(new EventHandler<ActionEvent>() {
-            
             @Override
             public void handle(ActionEvent event) {
-                int i=0;
-                while(i<5){
-                    for(int j=0;j<5;j++){
-                        Random random = new Random();
-                        buttons[i][j].setOnValue(random.nextBoolean());
-                        String color = buttons[i][j].on ? green : black;
-                        buttons[i][j].setStyle(color);
-                    }
-                    i++;
-                }
-                System.out.println("New Challenge Settled!");
+                    setPanelInitialSetup();
+                    System.out.println("New Challenge Settled!");
             }
         });
 
@@ -121,22 +111,53 @@ public class MyPanel {
          button.switchOn();
      }
 
-    public void setButtonInitialValue(myButton button){
-        Random random = new Random();
-       button.setOnValue(random.nextBoolean());
-       String color = button.on ? green : black;
-       button.setStyle(color);
+    public void setPanelInitialSetup(){
+        int i=0;
+         while(i < 5){
+                    int rowIndex = i;
+                    for(int j=0; j<5;j++){
+                        int colIndex = j;
+                        Random random = new Random();
+                        int aux;
+                        if(random.nextBoolean()){
+                        System.out.println("button changed: " + colIndex + ' ' + rowIndex);
+                         buttonAction(buttons[colIndex][rowIndex]);
+                         if(colIndex-1>=0 && colIndex-1<5){
+                            buttonAction(buttons[colIndex-1][rowIndex]);
+                            aux = colIndex-1;
+                            System.out.println("Neighbor changed:" + aux+ " " + rowIndex );
+                         }
+                         if(colIndex+1>=0 && colIndex+1<5){
+                            buttonAction(buttons[colIndex+1][rowIndex]);
+                            aux = colIndex+1;
+                            System.out.println("Neighbor changed:" + aux + " " + rowIndex );
+                         }
+                         if(rowIndex-1>=0 && rowIndex-1<5){
+                            buttonAction(buttons[colIndex][rowIndex-1]);
+                            aux = rowIndex-1;
+                            System.out.println("Neighbor changed:" + colIndex + " " + aux );
+                         }
+                         if(rowIndex+1>=0 && rowIndex+1<5){
+                            buttonAction(buttons[colIndex][rowIndex+1]);
+                            aux = rowIndex+1;
+                            System.out.println("Neighbor changed:" + colIndex + " " + aux );
+                            
+                        }
+                        }
+                    }
+                    i++;
+                }
    }
 
    public void placingButtons(GridPane gridPane){       
         int columnCount = 0;
         while(columnCount<5){
             for(int rowCount =0; rowCount<5;rowCount++){
-                setButtonInitialValue(buttons[columnCount][rowCount]);
                 gridPane.add(buttons[columnCount][rowCount],columnCount,rowCount);
             }   
             columnCount++;
         }
+
     }
 
 }

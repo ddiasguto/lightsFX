@@ -20,30 +20,25 @@ public class LightsFx extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        
-
         primaryStage.setTitle("LightsFx Application!");
         BorderPane root = new BorderPane();
-       
         MyPanel myPanel = new MyPanel();
         myPanel.placingButtons(myPanel.gridPane);
+        myPanel.setPanelInitialSetup();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         hBox.getChildren().addAll(
             myPanel.resetPanel(),
-            myPanel.invertButtons());
-        
+            myPanel.invertButtons()
+        );
         hBox.setSpacing(20);
         hBox.setAlignment(Pos.CENTER);
-
         vBox.getChildren().addAll(
             myPanel.gridPane(),
             hBox            
         );
-
         vBox.setAlignment(Pos.CENTER);
         root.setCenter(vBox);
-        
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();
     }

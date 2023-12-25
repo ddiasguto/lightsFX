@@ -22,6 +22,7 @@ public class MyPanel {
        {new myButton(),new myButton(),new myButton(),new myButton(),new myButton()}
    };
     public GridPane gridPane = new GridPane();
+    private int colIndex;
     
     public GridPane gridPane() {
         gridPane.setHgap(3); 
@@ -85,15 +86,27 @@ public class MyPanel {
     private void setActions(myButton[][] buttons){
         int i = 0;
          while(i < 5){
-             final int rowIndex = i;
+              int rowIndex = i;
          for(int j=0; j<5;j++){
-                 final int colIndex = j;
+            int colIndex = j;
              buttons[j][i].setOnAction(new EventHandler<ActionEvent>() {
      
                      @Override
                      public void handle(ActionEvent event) {
                          System.out.println("button clicked: " + rowIndex + ' ' + colIndex);
                          buttonAction(buttons[colIndex][rowIndex]);
+                         if(colIndex-1>=0 && colIndex-1<5){
+                            buttonAction(buttons[colIndex-1][rowIndex]);
+                         }
+                         if(colIndex+1>=0 && colIndex+1<5){
+                            buttonAction(buttons[colIndex+1][rowIndex]);
+                         }
+                         if(rowIndex-1>=0 && rowIndex-1<5){
+                            buttonAction(buttons[colIndex][rowIndex-1]);
+                         }
+                         if(rowIndex+1>=0 && rowIndex+1<5){
+                            buttonAction(buttons[colIndex][rowIndex+1]);
+                         }
                      }
                  });
              }
